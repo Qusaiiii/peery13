@@ -1,5 +1,5 @@
-var config = require("./config.json")
-	  , discord	= require("discord.js")
+
+	  var discord	= require("discord.js")
 	  , cleverbot	= require("./cleverbot.js").cleverbot
           , bot = new discord.Client({maxCachedMessages: 1000, forceFetchUsers: true});
 
@@ -21,7 +21,7 @@ bot.on("message", (msg) => {
 try {
 console.log("Logging in...");
 setTimeout(() => {console.log("Your bot should be good to go, have fun!");}, 5000);
-bot.loginWithToken("Bot " + config.token);
+bot.loginWithToken("Bot " + process.env.BOT_TOKEN);
 } catch(err) {
   console.log(`Error Caught: ${err}\nMake sure you've input a valid token into the config.`);
 });
