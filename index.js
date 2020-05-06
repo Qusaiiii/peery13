@@ -1,6 +1,6 @@
 const { Client, Util } = require('discord.js');
 const Discord = require("discord.js");
-const PREFIX = "!";
+const prefix = "!";
 const GOOGLE_API_KEY = "AIzaSyC5hG9Ssu2rov-A0T_8SqQFwtAFq7Yo6Po";
 const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
@@ -23,7 +23,7 @@ Connected to:
 ${client.guilds.size} servers
 ${client.channels.size} channel
 ${client.users.size} users
-Prefix: ${PREFIX}
+prefix: ${prefix}
 -----------------
 Use this url to bring your bot to a server:
 https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=2146958588585`);
@@ -42,7 +42,7 @@ client.on('ready', () => console.log('Yo this ready!'));
 
 client.on('message', async msg => { // eslint-disable-line
 	if (msg.author.bot) return undefined;
-	if (!msg.content.startsWith(PREFIX)) return undefined;
+	if (!msg.content.startsWith(prefix)) return undefined;
 
 	const args = msg.content.split(' ');
 	const searchString = args.slice(1).join(' ');
@@ -50,7 +50,7 @@ client.on('message', async msg => { // eslint-disable-line
 	const serverQueue = queue.get(msg.guild.id);
 
 	let command = msg.content.toLowerCase().split(" ")[0];
-	command = command.slice(PREFIX.length)
+	command = command.slice(prefix.length)
 
 	if (command === `play`) {
 		const voiceChannel = msg.member.voiceChannel;
