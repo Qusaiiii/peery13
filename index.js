@@ -1,7 +1,7 @@
 const CLEVERBOT_KEY = "CC52k4616pisXEsUkdqa9PkenmQ"
 
 const { Client } = require('discord.js');
-const request = require('node-superfetch');
+const superfetch = require('node-superfetch');
 const winston = require('winston');
 const client = new Client({ disableEveryone: true });
 const blankResponses = ['What?', 'Huh?', 'I don\'t understand.'];
@@ -24,7 +24,7 @@ client.on('message', async msg => {
 	if ((msg.channel.type === 'text' && !msg.mentions.has(client.user.id)) || msg.author.bot) return;
 	try {
 		const convo = convos.get(msg.channel.id);
-		const { body } = await request
+		const { body } = await superfetch
 			.get('https://www.cleverbot.com/getreply')
 			.query({
 				key: CLEVERBOT_KEY,
