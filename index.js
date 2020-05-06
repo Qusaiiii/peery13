@@ -1,7 +1,7 @@
 // Loading our modules.
 const Discord = require('discord.js');
 const Cleverbot = require('cleverbot-node');
-
+var prefix = '$';
 // Setting up our clients.
 const client = new Discord.Client();
 const clbot = new Cleverbot();
