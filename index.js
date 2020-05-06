@@ -1,6 +1,5 @@
 const { Client, Util } = require('discord.js');
 const Discord = require("discord.js");
-const { PREFIX, GOOGLE_API_KEY } = require('./config');
 const PREFIX = "!";
 const GOOGLE_API_KEY = "AIzaSyC5hG9Ssu2rov-A0T_8SqQFwtAFq7Yo6Po";
 const YouTube = require('simple-youtube-api');
